@@ -1,4 +1,4 @@
-package com.itsolutioncompany.opeviso.pageobject;
+package com.itsolutioncompany.opeviso.pageobject.home;
 
 import net.serenitybdd.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
