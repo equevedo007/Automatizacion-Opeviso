@@ -1,11 +1,11 @@
 package com.itsolutioncompany.opeviso.pageobject.login;
 
 import net.serenitybdd.annotations.Step;
-import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
+import net.serenitybdd.core.steps.UIInteractions;
 import org.openqa.selenium.support.FindBy;
 
-public class LoginPage extends PageObject {
+public class LoginPage extends UIInteractions {
 
     @FindBy(xpath = "//input[@name ='u']")
     WebElementFacade inpuntLoginUsuario;

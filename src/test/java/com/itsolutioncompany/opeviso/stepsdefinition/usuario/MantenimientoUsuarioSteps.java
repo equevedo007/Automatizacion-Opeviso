@@ -8,7 +8,6 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import net.serenitybdd.annotations.Steps;
 
 import java.util.List;
 import java.util.Map;
@@ -22,12 +21,10 @@ public class MantenimientoUsuarioSteps {
     RegistrodeUsuarioAction registrodeUsuarioAction;
 
     @Given("ingreso al sistema con mis credenciales :")
-    public void ingreso_al_sistema_con_mis_credenciales(DataTable dataTable) {
+    public void ingreso_al_sistema_con_mis_credenciales(DataTable dataTable1) {
         homePage.open();
-
-        List<Map<String, String>> data = dataTable.asMaps(String.class, String.class);
-
-        Map<String,String> row = data.get(0);
+        List<Map<String, String>> data1 = dataTable1.asMaps(String.class, String.class);
+        Map<String,String> row = data1.get(0);
         String usuaio = row.get("usuario");
         String clave = row.get("clave");
         loginPageAction.LoginAction(usuaio,clave);
@@ -35,30 +32,20 @@ public class MantenimientoUsuarioSteps {
 
     }
     @When("Selecciona registrar usaurio")
-    public void seleccionaRegistrarUsaurio(DataTable dataTable) {
-
-        List<Map<String, String>> data = dataTable.asMaps(String.class, String.class);
-
-        Map<String, String > row = data.get(0);
-
-
+    public void seleccionaRegistrarUsaurio(DataTable dataTable2) {
+        List<Map<String, String>> data2 = dataTable2.asMaps(String.class, String.class);
+        Map<String, String > row = data2.get(0);
         menuPageAction.SelecinarMenu(row.get("menu"));
         menuPageAction.SelecinarSubMenu(row.get("submenu"));
         menuPageAction.SelecinarButtonRegistar();
-
     }
-
     @When("registro usuario con perfil Administrador")
     public void registro_usuario_con_perfil_administrador(DataTable dataTable) {
 
         List<Map<String, String>> data = dataTable.asMaps(String.class, String.class);
         Map<String, String> row = data.get(0);
 
-        String TipoDocumento =row.get("TipoDocumento");
-
-        System.out.println("Documento es : " + TipoDocumento);
-
-        registrodeUsuarioAction.SeleccionarTipoDocumento(TipoDocumento);
+        registrodeUsuarioAction.SeleccionarTipoDocumento(row.get("TipoDocumento"));
 
     }
     @Then("Validar Mensaje de Confirmacion")
