@@ -8,9 +8,9 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
 import java.util.List;
 import java.util.Map;
+import static org.assertj.core.api.Assertions.assertThat;
 
 
 public class MantenimientoUsuarioSteps {
@@ -45,7 +45,9 @@ public class MantenimientoUsuarioSteps {
         List<Map<String, String>> data = dataTable.asMaps(String.class, String.class);
         Map<String, String> row = data.get(0);
 
-        registrodeUsuarioAction.SeleccionarTipoDocumento(row.get("TipoDocumento"));
+        registrodeUsuarioAction.IngresarDatosUsuario(row);
+
+        registrodeUsuarioAction.SeleccionarGuardar();
 
     }
     @Then("Validar Mensaje de Confirmacion")
@@ -53,6 +55,8 @@ public class MantenimientoUsuarioSteps {
         List<Map<String, String>> data = dataTable.asMaps(String.class, String.class);
 
         Map<String,String> row =data.get(0);
+
+        assertThat(row.get("Mensaje de Confirmacion")).isEqualTo("Se registro el usuario correctamente");
 
 
     }
