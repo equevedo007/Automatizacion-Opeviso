@@ -19,7 +19,7 @@
         <maven.compiler.source>17</maven.compiler.source>
         <junit-vintage-engine.version>5.10.2</junit-vintage-engine.version>
         <junit-platform-suite.version>1.10.2</junit-platform-suite.version>
-        <cucumber-junit-platform-engine.version>7.14.0</cucumber-junit-platform-engine.version>
+        <cucumber-junit-platform-engine.version>7.15.0</cucumber-junit-platform-engine.version>
         <tags></tags>
         <webdriver.base.url></webdriver.base.url>
     </properties>

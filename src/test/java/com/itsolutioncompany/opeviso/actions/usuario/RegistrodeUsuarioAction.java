@@ -1,6 +1,8 @@
 package com.itsolutioncompany.opeviso.actions.usuario;
 
+
 import com.itsolutioncompany.opeviso.pageobject.usuario.RegistrodeUsuario;
+import net.serenitybdd.annotations.Step;
 import net.serenitybdd.annotations.Steps;
 import net.serenitybdd.core.steps.UIInteractions;
 
@@ -8,11 +10,13 @@ import java.util.Map;
 
 public class RegistrodeUsuarioAction extends UIInteractions {
 
-    @Steps
+
+
     RegistrodeUsuario registrodeUsuario;
     public void SeleccionarTipoDocumento(String TipoDocumento){
         registrodeUsuario.SelecionarTipoDocumento(TipoDocumento);
     }
+
 
     public void IngresarDatosUsuario(Map<String, String> datos){
 

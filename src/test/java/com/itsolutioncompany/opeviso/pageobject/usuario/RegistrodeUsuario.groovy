@@ -1,11 +1,6 @@
 package com.itsolutioncompany.opeviso.pageobject.usuario
 
-import net.serenitybdd.core.annotations.findby.By
 import net.serenitybdd.core.steps.UIInteractions
-import net.serenitybdd.screenplay.waits.WaitWithTimeout
-import org.openqa.selenium.support.FindBy
-
-import java.time.Duration
 
 class RegistrodeUsuario extends UIInteractions{
 

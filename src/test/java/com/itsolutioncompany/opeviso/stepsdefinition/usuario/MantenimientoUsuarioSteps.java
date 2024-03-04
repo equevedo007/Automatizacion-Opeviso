@@ -28,8 +28,6 @@ public class MantenimientoUsuarioSteps {
         String usuaio = row.get("usuario");
         String clave = row.get("clave");
         loginPageAction.LoginAction(usuaio,clave);
-
-
     }
     @When("Selecciona registrar usaurio")
     public void seleccionaRegistrarUsaurio(DataTable dataTable2) {
